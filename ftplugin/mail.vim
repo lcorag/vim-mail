@@ -2,7 +2,7 @@
 if exists("b:did_ftplugin")
   finish
 endif
-b:did_ftplugin = 1
+let b:did_ftplugin = 1
 
 "Settings for writing emails
 " Set wrapping text and recognizing lines
@@ -16,5 +16,5 @@ autocmd BufNewFile,BufRead *.mail set filetype=mail
 
 augroup vim_mail
     au!
-    au BufWritePost *.mail :silent execute '!cat ' . expand("%:p") . ' | xclip -selection clipboard || wl-copy' <CR>
+    au BufWritePost *.mail :silent execute '!cat ' . expand("%:p") . ' | xclip -selection clipboard || wl-copy'
 augroup END
